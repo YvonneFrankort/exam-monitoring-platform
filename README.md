@@ -1,9 +1,9 @@
-# AI-exam-project
+# Exam Monitoring Platform
  
 > An intelligent examination platform for managing courses, assignments,
 > examinations, automated assessment, and examination monitoring.
 
-The **AI Exam Platform** is a web-based examination system designed to
+The **Exam Monitoring Platform** is a web-based examination system designed to
 provide teachers and students with a centralized environment for
 creating and managing courses, assignments, and exams.
 
@@ -13,13 +13,7 @@ gaze-related monitoring, and fraud-event reporting. Teachers can review
 student submissions, examination results, and historical monitoring
 events through dedicated reporting pages.
 
----
-
-## 🎥 Project Demo
-
-Take a quick look at the AI Exam Platform in action.
-
-[▶️ **Watch the Project Demo**](https://youtu.be/ONmR5uBsgzc)
+The original project plan included AI-based automatic grading of Moodle-style questions, but this feature was not implemented due to time constraints.
 
 ---
 
@@ -71,7 +65,39 @@ The platform records examination-related monitoring events, including:
 - Other examination monitoring events
 
 The monitoring events are stored in the Fraud_Events table and can be
- reviewed through the teacher's Fraud Report.
+reviewed through the teacher's Fraud Report.
+
+---
+
+### My Contributions
+During the project, I focused on the monitoring pipeline and the student‑side alert experience. My work centered on implementing MediaPipe-based detection, integrating alert logic, and providing basic UI feedback for monitoring events. I also participated in the early planning phase of the project, helping shape the initial direction and structure together with the team.
+
+- **MediaPipe-based monitoring pipeline**  
+Implemented face detection, head‑pose estimation and gaze direction using MediaPipe Face Landmarker with real-time alerts.
+
+- **Camera readiness & alert system**  
+Built the logic for camera availability checks, camera-blocking detection, no-face, multiple-faces, and real-time UI alerts for students.
+
+- **Gaze calibration workflow**  
+Implemented the gaze calibration process to improve monitoring accuracy.
+
+- **Gaze and pose alert logic**  
+Created the logic that determines suspicious gaze or head‑pose events and produces alert objects for the UI and backend.
+
+- **Connecting alerts to backend endpoints**
+Integrated the monitoring alerts with the existing backend API so that events could be logged in Supabase.
+
+- **Basic UI for monitoring alerts**
+Added simple UI components to display real-time alerts to students during monitoring (e.g., AlertPanel, alert messages, color states)
+
+- **Monitoring UI wireframes**  
+Contributed to early wireframes and layout ideas for the student monitoring interface.
+
+- **Early project planning**  
+Participated in the initial architecture and feature planning during the first weeks of the project, helping define the monitoring concept, data flow, and overall direction before implementation began.
+
+- **Backlog management & documentation**  
+Maintained weekly progress documentation and assisted with backlog organization throughout the project
 
 ---
 
