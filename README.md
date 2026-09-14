@@ -1,6 +1,6 @@
 # Exam Monitoring Platform
  
-> An intelligent examination platform for managing courses, assignments,
+> An examination platform for managing courses, assignments,
 > examinations, automated assessment, and examination monitoring.
 
 The **Exam Monitoring Platform** is a web-based examination system designed to
