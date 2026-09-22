@@ -467,6 +467,14 @@ No open-source license has been applied to this project.
 
 ---
 
+## Documentation
+
+A detailed project report is available in:
+
+📄 docs/Exam_Monitoring_Platform_Report.pd
+
+---
+
 ## Useful Links
 
 - 💻 **GitHub Repository:** https://github.com/SummerProject-AI-exam/AI-exam-project
