@@ -51,7 +51,7 @@ Maintained weekly progress documentation and assisted with backlog organization 
 
 ## Key Features
 
-## Monitoring
+## Monitoring Features
 
 The platform records examination-related monitoring events, including:
 
@@ -152,18 +152,6 @@ The platform follows a web client/server architecture.
 - PostgreSQL
 
 ---
-
-## Database
-
-Supabase (PostgreSQL) was used for:
-
-- Authentication
-- Course management
-- Student enrollment
-- Assignment and examination data
-- Monitoring event storage
-- Risk scoring and reporting
-
 
 ## Technology Stack
 
@@ -482,8 +470,7 @@ No open-source license has been applied to this project.
 ## Useful Links
 
 - 💻 **GitHub Repository:** https://github.com/SummerProject-AI-exam/AI-exam-project
-- 🎨 **Figma Design:**https://www.figma.com/design/bu6pj2jNmVcmUA7oBhhakw/AI-Exam?node-id=0-1&m=dev&t=p3yrKZVRZVtDuC5H-1
-- 🎥 **Project Demo:** https://youtu.be/ONmR5uBsgzc
+- 🎨 **Figma Design:** https://www.figma.com/design/bu6pj2jNmVcmUA7oBhhakw/AI-Exam?node-id=0-1&m=dev&t=p3yrKZVRZVtDuC5H-1
 
 
 
