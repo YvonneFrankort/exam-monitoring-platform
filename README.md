@@ -17,58 +17,6 @@ The original project plan included AI-based automatic grading of Moodle-style qu
 
 ---
 
-## Key Features
-
-## Teacher Features
-
-- Teacher authentication and dashboard
-- Create and manage courses
-- View active and previous courses
-- Create and manage assignments
-- Create and manage examinations
-- Add and manage examination questions
-- View enrolled students
-- Export enrolled student lists as CSV
-- View assignment reports
-- View examination reports
-- Review fraud/monitoring reports
-- Filter reports by course, student,  assignment, event type, and risk level
-- Inspect individual fraud-event details
-
-## Student Features
-
-- Student authentication and dashboard
-- Browse available courses
-- Enroll in courses
-- View enrolled courses
-- View assignments
-- Submit assignments
-- View assignment results
-- Participate in scheduled examinations
-- Automatic examination scoring where applicable
-- Review submitted examination results
-- View total marks and received marks
-
-## Examination Monitoring
-
-The platform records examination-related monitoring events, including:
-
-- Window blur/focus events
-- Camera readiness/blocking events
-- Face detection events
-- Multiple-face detection
-- No-face detection
-- Camera-off events
-- Gaze-related events
-- Head/pose monitoring events
-- Gaze calibration events
-- Other examination monitoring events
-
-The monitoring events are stored in the Fraud_Events table and can be
-reviewed through the teacher's Fraud Report.
-
----
-
 ### My Contributions
 During the project, I focused on the monitoring pipeline and the student‑side alert experience. My work centered on implementing MediaPipe-based detection, integrating alert logic, and providing basic UI feedback for monitoring events. I also participated in the early planning phase of the project, helping shape the initial direction and structure together with the team.
 
@@ -101,103 +49,38 @@ Maintained weekly progress documentation and assisted with backlog organization 
 
 ---
 
-###  Reporting
+## Key Features
 
-The platform provides separate reporting areas for teachers.
+## Monitoring
 
-## Assignment Report
+The platform records examination-related monitoring events, including:
 
-The Assignment Report provides:
+- Camera readiness checks
+- Face detection
+- Multiple-face detection
+- Gaze monitoring
+- Head-pose monitoring
+- Window blur/focus detection
+- Fraud-event logging
 
-- Course selection
-- Assignment selection
-- Submission-status filtering
-- Total students
-- Total assignments
-- Submitted assignments
-- Missing submissions
-- Student submission summary
-- Detailed assignment submission information
-- Student scores
-- Submission dates
+The monitoring events are stored in the Fraud_Events table and can be
+reviewed through the teacher's Fraud Report.
 
-The detailed report allows teachers to see individual assignment records
-and whether each student has submitted the assignment.
+## Teacher Features
 
----
+- Course management
+- Assignment management
+- Examination management
+- Student enrollment management
+- Performance reporting
+- Monitoring event review
 
-## Exam Report
+## Student Features
 
-The Exam Report provides teachers with an overview of examination
- performance, including:
-
-- Course selection
-- Exam selection
-- Submission-status filtering
-- Total students
-- Total exams
-- Submitted examinations
-- Missing submissions
-- Student examination summary
-- Detailed examination results
-- Scores and submission information
-
-
----
-
-## Fraud Report
-
-The Fraud Report provides a historical overview of examination
-monitoring events.
-
-## Filters
-
-Teachers can filter the report by:
-
-- Course
-- Student
-- Event Type
-- Risk Level
-
-
-## Summary
-
-The report provides summary information such as:
-
-- Total students
-- Total fraud/monitoring events
-- High-risk events
-- Average confidence
-
-
-
-##  Student Fraud Summary
-
-Teachers can see the number of recorded monitoring events for each
-student, including their email address and risk-level event counts.
-
-The summary helps teachers quickly identify students with a higher
-number of suspicious monitoring events.
-
-
-## Detailed Fraud Report
-
-The detailed report displays:
-
-- Student
-- Student email
-- Event type
-- Risk level
-- Event date and time
-- Event details
-
-A **View** button can be used to inspect the JSON details associated
- with an individual event.
-
-**Note:** Fraud-event risk levels are assigned according to the
- project's monitoring-event classification.
-
- 
+- Course enrollment
+- Assignment submission
+- Examination participation
+- Result tracking
 
 ---
 
@@ -238,7 +121,7 @@ The platform follows a web client/server architecture.
 
        ┌─────────────────┐              ┌──────────────────┐
 
-       │    Supabase     │              │ Monitoring / AI  │
+       │    Supabase     │              │ Monitoring       │
 
        │ PostgreSQL/Auth │              │ related services │
 
@@ -268,91 +151,19 @@ The platform follows a web client/server architecture.
 - Supabase
 - PostgreSQL
 
-
 ---
 
-## Database Structure
+## Database
 
-The current Supabase database includes entities for:
+Supabase (PostgreSQL) was used for:
 
-- Teacher
-- Student
-- Course
-- Enrollment
-- Assignment
-- assignment_questions
-- assignment_submissions
-- student_answers
-- Exam
-- Multiple_Choice_Questions
-- Coding_Questions
-- exam_submissions
-- exam_answers
-- Exam_Sessions
-- Fraud_Events
-- Risk_Scores
+- Authentication
+- Course management
+- Student enrollment
+- Assignment and examination data
+- Monitoring event storage
+- Risk scoring and reporting
 
-## Main Relationships
-
-Teacher
-
-   │
-
-   └── Course
-
-          │
-
-          ├── Enrollment ───── Student
-
-          │
-
-          ├── Assignment
-
-          │      ├── Assignment Questions
-
-          │      └── Assignment Submissions
-
-          │
-
-          └── Exam
-
-                 ├── Multiple Choice Questions
-
-                 ├── Coding Questions
-
-                 ├── Exam Submissions
-
-                 └── Exam Sessions
-
-                          │
-
-                          └── Fraud Events
-
-## Examination Monitoring Relationship
-
-Student
-
-   │
-
-   ▼
-
-Exam Session
-
-   │
-
-   ▼
-
-Fraud Events
-
-   ├── Window events
-
-   ├── Camera events
-
-   ├── Face events
-
-   ├── Gaze events
-
-   └── Pose/head events
 
 ## Technology Stack
 
@@ -383,9 +194,9 @@ Fraud Events
 
 ---
 
-## AI and Monitoring
+## Monitoring
 
-This part of the system handles everything related to the webcam: face detection, camera readiness, calibration, and the prototype gaze alerts. It all runs in the browser using MediaPipe Face Landmarker.
+This part of the system handles everything related to the webcam and browser: tab switching, face detection, camera readiness, calibration, and the prototype gaze alerts. It all runs in the browser using MediaPipe Face Landmarker.
 
 ---
 
